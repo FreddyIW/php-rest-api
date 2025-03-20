@@ -17,3 +17,11 @@ services:
       MYSQL_DATABASE: svitts
       MYSQL_USER: foo
       MYSQL_PASSWORD: bar
+  angular:
+    image: my-angular-app
+    container_name: my-angular-app
+    build: "../www/"
+    depends_on:
+      - php-apache
+    ports:
+      - "8080:80"
