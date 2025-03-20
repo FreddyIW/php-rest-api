@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-angular-app
-  namespace: my-angular-app
+  namespace: php-rest-api
   labels:
     app: my-angular-app
 spec:

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: my-angular-app-service
-  namespace: my-angular-app
+  namespace: php-rest-api
 spec:
   selector:
     app: my-angular-app
