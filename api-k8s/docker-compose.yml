@@ -1,0 +1,27 @@
+version: "3.2"
+services:
+  php-apache:
+    build: "./docker/php-apache/"
+    depends_on:
+      - mysql
+    ports:
+      - "4201:80"
+    volumes:
+      - ./src/:/var/www/html/
+  mysql:
+    build: "./docker/mysql/"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: svitts
+      MYSQL_USER: foo
+      MYSQL_PASSWORD: bar
+  angular:
+    image: my-angular-app
+    container_name: my-angular-app
+    build: "../www/"
+    depends_on:
+      - php-apache
+    ports:
+      - "8080:80"
