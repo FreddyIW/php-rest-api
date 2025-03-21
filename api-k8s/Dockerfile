@@ -1,7 +1,7 @@
 FROM php:7.2-apache
 RUN docker-php-ext-install mysqli
 
-COPY ../../src/ /var/www/html/
+COPY src/ /var/www/html/
 
 COPY httpd.conf /usr/local/apache2/conf/httpd.conf
 RUN echo "Include /usr/local/apache2/conf/httpd.conf" >> /usr/local/apache2/conf/httpd.conf
