@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-angular-app-ingress
-  namespace: default
+  namespace: php-rest-api
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:

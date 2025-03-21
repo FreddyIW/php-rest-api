@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+  namespace: php-rest-api
+  labels:
+    app: php-apache
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: php-apache
+  template:
+    metadata:
+      labels:
+        app: php-apache
+    spec:
+      containers:
+      - name: php-apache
+        image: freddyiw/php-apache-k8s:latest
+        ports:
+        - containerPort: 80

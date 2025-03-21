@@ -1,7 +1,7 @@
 <?php
 class DataSource {
     
-    private static $hostname = "mysql";
+    private static $hostname = "192.168.0.57";
     private static $username = "foo";
     private static $password = "bar";
     private static $database = "svitts";
