@@ -22,6 +22,7 @@ export class MovieService {
 
   fetchMovies(): Observable<Movie[]> {
     console.log('test2');
+    console.log(environment);
     console.log('Base URL:', environment.baseUrl);
     return this.httpClient
       .get<Movie[]>(MOVIES_URL, HTTP_OPTIONS)
