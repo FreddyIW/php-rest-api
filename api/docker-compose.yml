@@ -18,8 +18,8 @@ services:
       MYSQL_USER: foo
       MYSQL_PASSWORD: bar
   angular:
-    image: my-angular-app
-    container_name: my-angular-app
+#    image: my-angular-app
+#    container_name: my-angular-app
     build: "../www/"
     depends_on:
       - php-apache
