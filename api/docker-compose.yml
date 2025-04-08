@@ -8,6 +8,7 @@ services:
       - "4201:80"
     volumes:
       - ./src/:/var/www/html/
+    restart: unless-stopped
   mysql:
     build: "./docker/mysql/"
     ports:
@@ -17,6 +18,7 @@ services:
       MYSQL_DATABASE: svitts
       MYSQL_USER: foo
       MYSQL_PASSWORD: bar
+    restart: unless-stopped
   angular:
 #    image: my-angular-app
 #    container_name: my-angular-app
@@ -25,3 +27,4 @@ services:
       - php-apache
     ports:
       - "8080:80"
+    restart: unless-stopped
